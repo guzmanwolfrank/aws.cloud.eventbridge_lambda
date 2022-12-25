@@ -56,6 +56,7 @@ Define a rule pattern
 Configure the rule target to point to the Inventory function.
 
 **Step 3: Testing the end-to-end functionality**
+
 To test the end-to-end functionality, you will publish a message to the Orders EventBridge event bus with an EU location. This will trigger the following sequence of event-driven actions:
 
 The message containing an EU location triggers the rule on the Orders event bus, which you created in the previous module, to route the message to the OrderProcessing StepFunctions workflow.
