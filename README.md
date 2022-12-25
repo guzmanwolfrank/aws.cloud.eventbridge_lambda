@@ -41,7 +41,7 @@ The On success Destination is displayed.
 
 ![lambda-success-destination](https://user-images.githubusercontent.com/29739578/209454434-a2b3fea3-1a7a-4296-94ed-0cc5490485df.png)
 
-** Step 2: Create the "Order Processed" rule for the Inventory function **
+**Step 2: Create the "Order Processed" rule for the Inventory function**
 
 The Inventory function subscribes to events that signal the processing of the order has been completed successfully. The OrderProcessed event is published by the Step Function you created in the AWS Step Functions challenge.
 
