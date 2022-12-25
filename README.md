@@ -1,6 +1,6 @@
-# aws.eventbridge_lambda
+# **aws.eventbridge_lambda**
 
-## Lab Overview:  Use Lambda Destinations to send a message to the Inventory EventBridge event bus, following message processing through EventBridge, SNS and Step Functions. 
+## **Lab Overview:  Use Lambda Destinations to send a message to the Inventory EventBridge event bus, following message processing through EventBridge, SNS and Step Functions.** 
 
 
 ![lambda_dest_arch](https://user-images.githubusercontent.com/29739578/209454289-6c9d5ba1-054b-44c0-ab74-ff90faab916d.png)
@@ -55,7 +55,7 @@ Define a rule pattern
 
 Configure the rule target to point to the Inventory function.
 
-** Step 3: Testing the end-to-end functionality **
+**Step 3: Testing the end-to-end functionality**
 To test the end-to-end functionality, you will publish a message to the Orders EventBridge event bus with an EU location. This will trigger the following sequence of event-driven actions:
 
 The message containing an EU location triggers the rule on the Orders event bus, which you created in the previous module, to route the message to the OrderProcessing StepFunctions workflow.
@@ -98,6 +98,6 @@ Expand the Log Stream record to verify success and explore the event schema.
 
 ![cloudwatch-logs-view-log-stream](https://user-images.githubusercontent.com/29739578/209454519-504b99d4-aaa7-4369-aa32-faf68ff700f5.png)
 
-## ** Congratulations! You have successfully used Lambda Destinations to send a message to the Inventory EventBridge event bus, following message processing through EventBridge, Step Functions, and SNS **.##
+## **Congratulations! You have successfully used Lambda Destinations to send a message to the Inventory EventBridge event bus, following message processing through EventBridge, Step Functions, and SNS**.##
 
 
