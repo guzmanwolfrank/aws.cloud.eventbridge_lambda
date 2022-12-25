@@ -20,3 +20,16 @@ Enter InventoryFunction in the Lambda function filter. And select the function n
 Select the Lambda function from the list of functions.
 
 ![lambda-function-select](https://user-images.githubusercontent.com/29739578/209454356-161587fc-a50b-474d-b85e-936bcde090a5.png)
+
+In the Lambda function Designer, choose Add destination.
+
+![lambda-function-designer](https://user-images.githubusercontent.com/29739578/209454397-d38c8130-a101-4770-b8be-8840622ca27f.png)
+
+In the Add destination dialogue box:
+
+For Condition, select On success.
+For Destination type, select EventBridge event bus.
+For Destination, select Inventory.
+![lambda-add-destination](https://user-images.githubusercontent.com/29739578/209454406-64d37215-e8a0-4d53-8439-55b11c852eb1.png)
+
+
