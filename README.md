@@ -32,4 +32,11 @@ For Destination type, select EventBridge event bus.
 For Destination, select Inventory.
 ![lambda-add-destination](https://user-images.githubusercontent.com/29739578/209454406-64d37215-e8a0-4d53-8439-55b11c852eb1.png)
 
+Choose Save. 
+[The Lambda function must have permissions through its IAM Execution Policy to access the success and failure Destinations. For simplicity, the function's IAM Execution Policy has been configured with access to EventBridge and SQS (see below).]
+
+
+
+
+
 
