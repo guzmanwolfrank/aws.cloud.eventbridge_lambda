@@ -51,11 +51,53 @@ Add a description: Handles orders successfully processed by the Order Processing
 
 Define a rule pattern
 
+![rulepattern](https://user-images.githubusercontent.com/29739578/209454469-18c148fa-ccd0-4f0d-a5a8-bf48762148be.PNG)
 
+Configure the rule target to point to the Inventory function.
 
+** Step 3: Testing the end-to-end functionality **
+To test the end-to-end functionality, you will publish a message to the Orders EventBridge event bus with an EU location. This will trigger the following sequence of event-driven actions:
 
+The message containing an EU location triggers the rule on the Orders event bus, which you created in the previous module, to route the message to the OrderProcessing StepFunctions workflow.
 
+The OrderProcessing StepFunctions workflow processes the order and publishes an event to the Orders event bus.
 
+The OrderProcessingRule that you just created on the Orders event bus routes the event to the Inventory function.
 
+On successful execution, the InventoryFunction function sends an event to the Inventory event bus through the On success Lambda destination.
+
+The InventoryDevRule rule on the Inventory event bus logs the event to the /aws/events/inventory CloudWatch Logs log group.
+
+Let's test it!
+Select the EventBridge tab in the Event Generator .
+
+Make sure that the Event Generator is populated with the following (if you clicked the link above then you should see this pre-populated)
+
+Event Bus selected to Orders
+Source should be com.aws.orders
+In the Detail Type add Order Notification
+JSON payload for the Detail Template should be:
+
+![vgener](https://user-images.githubusercontent.com/29739578/209454494-49b06f72-147d-49d8-a084-031ddc14827c.PNG)
+
+Click Publish.
+
+Open the AWS Management Console for CloudWatch  in a new tab or window, so you can keep this step-by-step guide open.
+
+Choose Log groups in the left navigation.
+
+Enter /aws/events/inventory in the Log Group Filter and choose /aws/events/inventory log group.
+
+![cloudwatch-logs-select-log-group](https://user-images.githubusercontent.com/29739578/209454505-e046577f-6732-4ce6-9072-3cfffe5dcb4e.png)
+
+In the list of Log Streams, choose the Log Stream.
+
+![cloudwatch-logs-select-log-stream](https://user-images.githubusercontent.com/29739578/209454512-3c788422-f554-4306-9732-6ac4021d54f9.png)
+
+Expand the Log Stream record to verify success and explore the event schema.
+
+![cloudwatch-logs-view-log-stream](https://user-images.githubusercontent.com/29739578/209454519-504b99d4-aaa7-4369-aa32-faf68ff700f5.png)
+
+## ** Congratulations! You have successfully used Lambda Destinations to send a message to the Inventory EventBridge event bus, following message processing through EventBridge, Step Functions, and SNS **.##
 
 
