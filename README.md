@@ -35,6 +35,25 @@ For Destination, select Inventory.
 Choose Save. 
 [The Lambda function must have permissions through its IAM Execution Policy to access the success and failure Destinations. For simplicity, the function's IAM Execution Policy has been configured with access to EventBridge and SQS (see below).]
 
+![vnfunction](https://user-images.githubusercontent.com/29739578/209454428-f6407d3f-3864-46b4-b701-1b1a743b5f46.PNG)
+
+The On success Destination is displayed.
+
+![lambda-success-destination](https://user-images.githubusercontent.com/29739578/209454434-a2b3fea3-1a7a-4296-94ed-0cc5490485df.png)
+
+** Step 2: Create the "Order Processed" rule for the Inventory function **
+
+The Inventory function subscribes to events that signal the processing of the order has been completed successfully. The OrderProcessed event is published by the Step Function you created in the AWS Step Functions challenge.
+
+Create a rule on the Orders event bus called OrderProcessingRule
+
+Add a description: Handles orders successfully processed by the Order Processing state machine
+
+Define a rule pattern
+
+
+
+
 
 
 
