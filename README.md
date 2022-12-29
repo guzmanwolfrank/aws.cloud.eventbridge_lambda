@@ -6,7 +6,7 @@
 ![lambda_dest_arch](https://user-images.githubusercontent.com/29739578/209454289-6c9d5ba1-054b-44c0-ab74-ff90faab916d.png)
 
 
-**Step 1: Configure the Inventory event bus**
+## **Step 1: Configure the Inventory event bus**
 
 
 Configure the Inventory event bus as a successful Lambda Destination on InventoryFunction Lambda function
@@ -41,7 +41,7 @@ The On success Destination is displayed.
 
 ![lambda-success-destination](https://user-images.githubusercontent.com/29739578/209454434-a2b3fea3-1a7a-4296-94ed-0cc5490485df.png)
 
-**Step 2: Create the "Order Processed" rule for the Inventory function**
+## **Step 2: Create the "Order Processed" rule for the Inventory function**
 
 The Inventory function subscribes to events that signal the processing of the order has been completed successfully. The OrderProcessed event is published by the Step Function you created in the AWS Step Functions challenge.
 
@@ -55,7 +55,7 @@ Define a rule pattern
 
 Configure the rule target to point to the Inventory function.
 
-**Step 3: Testing the end-to-end functionality**
+## **Step 3: Testing the end-to-end functionality**
 
 To test the end-to-end functionality, you will publish a message to the Orders EventBridge event bus with an EU location. This will trigger the following sequence of event-driven actions:
 
